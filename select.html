@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deploy Alpha Now</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico">
+<style>
+     body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: 'Pacifico', cursive;
+        background-image: url(https://static.vecteezy.com/system/resources/previews/006/852/804/original/abstract-blue-background-simple-design-for-your-website-free-vector.jpg);
+        background-size: 100% 100%;
+        background-position: top center;
+        position: relative;
+    }
+
+    .button {
+        width: 150px;
+        height: 60px;
+        border: 3px solid #ff8c42;
+        border-radius: 45px;
+        transition: all 0.3s;
+        cursor: pointer;
+        font-size: 1.2em;
+        font-weight: 550;
+        margin: 10px; /* Add margin to create space between buttons */
+    }
+
+    .button-blue {
+        background: white;
+        color: #ff8c42;
+    }
+
+    .button-blue:hover {
+        background: #ff8c42;
+        color: white;
+        font-size: 1.5em;
+    }
+
+    .button-red {
+        background: #fff;
+        color:#4caf50;
+        border: 3px solid #4caf50; /* Red border */
+    }
+
+    .button-red:hover {
+        background: #4caf50;
+        color: #fff;
+        font-size: 1.5em;
+    }
+
+    .button-yellow {
+        background: #fffffd; /* Yellow background */
+        color: #6a5acd;
+        border: 3px solid #6a5acd; /* Yellow border */
+    }
+
+    .button-yellow:hover {
+        background: #6a5acd; /* Black background on hover */
+        color: #fcfcfc; /* Yellow text on hover */
+        font-size: 1.5em;
+    }
+
+    .loading-container {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: white; /* Opaque white background */
+        z-index: 9999;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .loader {
+        border: 4px solid #f3f3f3;
+        border-top: 4px solid #6a5acd;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+</style>
+</head>
+<body>
+    <!-- Loading page -->
+    <div class="loading-container">
+        <div class="loader"></div>
+    </div>
+
+    <a href="Public/session/qr.html" style="text-decoration: none;">
+        <button class="button button-blue">via qr</button>
+    </a>
+
+    <a href="Public/error/error.html" style="text-decoration: none;">
+        <button class="button button-red">via code</button>
+    </a>
+
+    <script>
+        // Simulate loading delay (3 seconds in this example)
+        setTimeout(function () {
+            document.querySelector('.loading-container').style.display = 'none';
+            document.querySelectorAll('.button').forEach(function(btn) {
+                btn.style.display = 'block';
+            });
+        }, 1000);
+    </script>
+</body>
+</html>
